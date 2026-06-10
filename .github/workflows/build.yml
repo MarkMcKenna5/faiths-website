@@ -38,7 +38,7 @@ jobs:
       - name: Build Eleventy
         run: npx @11ty/eleventy
         env:
-          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_SECRET: ${{ secrets.NOTION_DATABASE_SECRET }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
       - uses: actions/upload-pages-artifact@v3
