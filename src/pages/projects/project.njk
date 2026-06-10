@@ -1,0 +1,12 @@
+---
+pagination:
+    data: pages.projects.pages
+    size: 1
+    alias: project
+permalink: /project/{{ project.permalink }}/
+layout: layouts/projects.njk
+---
+
+<h1>{{ project.title }}</h1>
+<h2>{{ project.publishDate }}</h2>
+<h2>{{ project.body }}</h2>
