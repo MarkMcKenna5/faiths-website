@@ -18,5 +18,5 @@ export const downloadImage = async (s3Url, alt, outputDir) => {
   const filename = `${altText}-${hash}.${ext}`;
   
   writeFileSync(`${outputDir}/${filename}`, Buffer.from(buffer));
-  return `/public/img/${filename}`; // your own public URL
+  return `./public/img/${filename}`; // your own public URL
 };
