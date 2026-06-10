@@ -4,7 +4,7 @@ export const parseProjectData = async (projectEntries) => {
     const mainProject = projectEntries.main;
     const projectPages = projectEntries.pages;
 
-    const outputDir = "./build/public/img/db"
+    const outputDir = "./build/public/img"
     const mainPageFeatImageDescription = mainProject.properties.featuredImageDescription?.rich_text[0]?.plain_text;
     const mainPageFeatImage = await downloadImage(mainProject.properties.featuredImage?.files[0]?.file?.url, mainPageFeatImageDescription, outputDir);
 

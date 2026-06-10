@@ -3,7 +3,7 @@ import { downloadImage } from "../../utils/createImg.mjs"
 export const parseHomeData = async (homeEntries) => {
     const homePage = homeEntries.main;
 
-    const outputDir = "./build/public/img/db"
+    const outputDir = "./build/public/img"
     const mainPageFeatImage = homePage.properties.featuredImage?.files[0]?.file?.url;
     const mainPageFeatImageDescription = homePage.properties.featuredImageDescription?.rich_text[0]?.plain_text;
 

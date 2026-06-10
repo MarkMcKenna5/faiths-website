@@ -5,7 +5,7 @@ export const parseBlogData = async (blogEntries) => {
   const mainBlog = blogEntries.main;
   const blogPages = blogEntries.pages;
 
-  const outputDir = "./build/public/img/db";
+  const outputDir = "./build/public/img";
   const mainPageFeatImageDescription =
     mainBlog.properties.featuredImageDescription?.rich_text[0]?.plain_text;
   const mainPageFeatImage = await downloadImage(

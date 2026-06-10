@@ -88,7 +88,7 @@ const blockToHTML = async (block) => {
           : block.image.file.url;
 
       const caption = renderRichText(block.image.caption);
-      const hostedImg = await downloadImage(src, caption, "./build/public/img/db")
+      const hostedImg = await downloadImage(src, caption, "./build/public/img")
       return caption
         ? `<figure><img src="${hostedImg}" alt="${caption}" /><figcaption>${caption}</figcaption></figure>`
         : `<img src="${hostedImg}" alt="" />`;
