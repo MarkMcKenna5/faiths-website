@@ -4,9 +4,15 @@ import dotenv from "dotenv";
 import { blocksToHTML } from "../utils/parseRichText.mjs"
 import { parse } from "./parse/parse.mjs"
 
+console.log("dbs", process.env.NOTION_DATABASE_SECRET.substring(0,2))
+console.log("dbid", process.env.NOTION_DATABASE_ID.substring(0,2))
+
 if (process.env.LOCAL_MODE) {
   dotenv.config();
 }
+
+console.log("dbs", process.env.NOTION_DATABASE_SECRET.substring(0,2))
+console.log("dbid", process.env.NOTION_DATABASE_ID.substring(0,2))
 
 const secret = process.env.NOTION_DATABASE_SECRET;
 const notion = new Client({ auth: secret });
