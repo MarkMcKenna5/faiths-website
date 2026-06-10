@@ -3,7 +3,10 @@ import fs from "fs";
 import dotenv from "dotenv";
 import { blocksToHTML } from "../utils/parseRichText.mjs"
 import { parse } from "./parse/parse.mjs"
-dotenv.config();
+
+if (process.env.LOCAL_MODE) {
+  dotenv.config();
+}
 
 const secret = process.env.NOTION_DATABASE_SECRET;
 const notion = new Client({ auth: secret });
