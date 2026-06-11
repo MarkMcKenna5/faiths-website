@@ -18,7 +18,6 @@ export default async function(eleventyConfig) {
     });
     
     return {
-        pathPrefix: "/faiths-website/",
         dir: {
             input: "src",
             output: "build",

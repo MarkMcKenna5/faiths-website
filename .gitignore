@@ -10,3 +10,6 @@ notionData.json
 test.js
 
 src/public/img/db/*
+
+env.js
+env.mjs

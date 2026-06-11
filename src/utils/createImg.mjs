@@ -15,8 +15,8 @@ export const downloadImage = async (s3Url, alt, outputDir) => {
   // Use a hash of the URL as a stable filename
   const hash = createHash("md5").update(s3Url).digest("hex");
   const ext = "png"; // or parse from Content-Type header
-  const filename = `${altText}-${hash}.${ext}`;
+  const filename = `${altText.slice(0, 10)}-${hash}.${ext}`;
   
   writeFileSync(`${outputDir}/${filename}`, Buffer.from(buffer));
-  return `./public/img/${filename}`; // your own public URL
+  return `/public/img/${filename}`; // your own public URL
 };
