@@ -1,23 +1,22 @@
 import { Client } from "@notionhq/client";
 import fs from "fs";
-import dotenv from "dotenv";
 import { blocksToHTML } from "../utils/parseRichText.mjs"
 import { parse } from "./parse/parse.mjs"
 
-console.log("dbs", process.env.NOTION_DATABASE_SECRET.substring(0,2))
-console.log("dbid", process.env.NOTION_DATABASE_ID.substring(0,2))
 
-if (process.env.LOCAL_MODE) {
-  dotenv.config();
+let secret
+let databaseId;
+if (fs.existsSync('./env.mjs')) {
+  const env = await import('../../env.mjs')
+    secret = env.NOTION_DATABASE_SECRET;
+    databaseId = env.NOTION_DATABASE_ID;
+} else {
+    secret = process.env.NOTION_DATABASE_SECRET;
+    databaseId = process.env.NOTION_DATABASE_ID;
 }
 
-console.log("dbs", process.env.NOTION_DATABASE_SECRET.substring(0,2))
-console.log("dbid", process.env.NOTION_DATABASE_ID.substring(0,2))
 
-const secret = process.env.NOTION_DATABASE_SECRET;
 const notion = new Client({ auth: secret });
-
-const databaseId = process.env.NOTION_DATABASE_ID;
 const pagesFilePath = "./pages.json";
 const notionDataFilePath = "./notionData.json";
 
